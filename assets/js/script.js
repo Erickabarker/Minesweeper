@@ -23,7 +23,7 @@ class Minesweeper{
                     mines:8
                 }
             },
-            {options: opts},
+            {options: options},
             loadedData
         );
 
@@ -63,4 +63,13 @@ if(this.loadGame){
     this,
 
 this.save();
+}
+
+gameArea(); {
+    for (let r = 0; r < this.options["rows"]; r++){
+        this.grid[r] = [];
+        for (let c = 0; c < this.options["cols"]; c++){
+            this.grid[r].push(newCell({xpos: c, ypos: r}))
+        }
+    }
 }
