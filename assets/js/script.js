@@ -1,78 +1,29 @@
-class Minesweeper{
-    constructor(opts ={}){
-        let loadedData ={};
+const grid = []
 
-        this.opts = opts;
-
-        if (hasLocalStorage && localStorage["minesweeper.data"]){
-            loadedData = JSON.parse(localStorage["minesweeper.data"]);
-            this.loadGame = true;
-        }
-    }}
-
-        Object.assign(
-            this,
-            {
-                grid: [],
-                minesFound: 0,
-                falseMines: 0,
-                game_status: "Playing...",
-                playing: true,
-                movesMade: 0,
-                options:{
-                    rows:10,
-                    cols:10,
-                    mines:8
-                }
-            },
-            {options: this.opts},
-            loadedData
-        );
-
-        let rows = this.options["rows"];
-            if (isNaN(rows)) {
-                this.options["rows"] = 10;
-            } else if (rows < 3){
-                this.options["rows"] = 3;
-            } else if (rows > 20){
-                this.options["rows"] = 20;
-            }
-        
-            let cols = this.options["cols"];
-                if (isNaN(cols)) {
-                    this.options["cols"] = 10;
-                } else if (cols < 3){
-                    this.options["cols"] = 3;
-                } else if (cols > 20){
-                    this.options["cols"] = 20;
-                }  
-        
-            if (isNaN(this.options["mines"])) {
-                this.options["mines"] = 8;
-            } if (this.options["mines"] < 0) {
-                this.options["mines"] = 1;
-            } else if (this.options["mines"] >
-                this.options["rows"] * this.options["cols"]
-
-            ){
-                this.options["mines"] = this.options["rows"] * this.options["cols"];
+function addEventListeners(){
 
 }
-if(this.loadGame){
-    this.load();
 
-} else { 
-    this,
+function checkForMines(){
 
-this.save();
 }
-
-const minesweeper = new Minesweeper()
-gameArea(); {
-    for (let r = 0; r < this.options["rows"]; r++){
-        this.grid[r] = [];
-        for (let c = 0; c < this.options["cols"]; c++){
-            this.grid[r].push(newCell({xpos: c, ypos: r}))
+export function makeGrid(gridSize, numberOfMines){
+    const grid =[]
+    for (let x = 0; x < gridSize; x++){
+        const row = []
+    for(let y = 0; y < gridSize; y++){
+        const tile = {
+            x,
+            y
         }
+        row.push(tile)
     }
+    grid.push(row)
+    }
+    return grid
 }
+
+function init(){
+
+}
+init()
