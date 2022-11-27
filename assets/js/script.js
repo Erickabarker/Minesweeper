@@ -2,6 +2,8 @@ class Minesweeper{
     constructor(opts ={}){
         let loadedData ={};
 
+        this.opts = opts;
+
         if (hasLocalStorage && localStorage["minesweeper.data"]){
             loadedData = JSON.parse(localStorage["minesweeper.data"]);
             this.loadGame = true;
@@ -23,7 +25,7 @@ class Minesweeper{
                     mines:8
                 }
             },
-            {options: options},
+            {options: this.opts},
             loadedData
         );
 
@@ -65,6 +67,7 @@ if(this.loadGame){
 this.save();
 }
 
+const minesweeper = new Minesweeper()
 gameArea(); {
     for (let r = 0; r < this.options["rows"]; r++){
         this.grid[r] = [];

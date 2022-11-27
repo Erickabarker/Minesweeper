@@ -17,7 +17,13 @@
     grid-template-rows: auto auto auto auto auto auto auto auto; 
   }
   
-  
+  .clearfix{
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+  }
   /*
   .beginner {
     --grid-rows: 9;
